@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vcard</title>
+  <title>Welcome - Hello</title>
+  <link rel="shortcut icon" href="/2.jpeg" type="image/x-icon">
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -22,10 +23,10 @@
            <!-- Image and Name Section -->
            <div class="flex flex-col lg:flex-row items-center gap-6">
              <div class="relative w-36 h-36 rounded-xl overflow-hidden border-4 border-white shadow-md">
-               <img src="icon.png" alt="Profile Picture" class="object-cover w-full h-full">
+               <img src="2.jpeg" alt="Profile Picture" class="object-cover w-full h-full">
              </div>
              <div class="flex-1 text-center lg:text-left">
-               <h1 class="text-3xl font-custom text-shadow font-normal text-yellow-300 mb-1">Yuic<span class="font-normal font-custom text-shadow text-white">hiro</span></h1>
+               <h1 class="text-3xl font-custom text-shadow font-normal text-yellow-300 mb-1">He<span class="font-normal font-custom text-shadow text-white">ra</span></h1>
                <p class="font-normal inline-block rounded-xl px-1.5 py-1.5 text-sm bg-gradient-to-r from-purple-600 to-blue-500 font-custom text-white">
                    UI/UX Designer
                </p>
@@ -35,8 +36,8 @@
                <p class="font-normal mb-1.5 inline-block rounded-xl px-1.5 py-1.5 text-sm bg-gradient-to-r from-blue-600 to-green-500 font-custom text-white">
                    Japanese Tutor
                </p>
-               <p class="font-normal mb-1.5 inline-block rounded-xl px-1.5 py-1.5 text-sm bg-gradient-to-r from-blue-600 to-yellow-500 font-custom text-white">
-                   Prompt Engineer
+               <p class="font-normal mb-1.5 inline-block rounded-xl px-1.5 py-1.5 text-sm bg-gradient-to-r from-red-500 to-purple-600 font-custom text-white">
+                   Tour Guides
                </p>
                <!-- Techstack -->
                <p class="font-normal text-white px-1.5 py-1.5 font-custom text-shadow">Skills</p>
@@ -110,9 +111,9 @@
                    <i class="fa-brands text-white fa-readme"></i>
                    Blogsites
                </button>
-               <button id="music" type="button" class="bg-gradient-to-r from-purple-600 to-blue-500 hover:bg-gradient-to-br font-custom text-white px-5 py-2 rounded-full flex items-center gap-2 shadow-lg">
-                   <i class="fa-solid fa-music"></i>
-                   Music
+               <button id="experience" type="button" class="bg-gradient-to-r from-purple-600 to-blue-500 hover:bg-gradient-to-br font-custom text-white px-5 py-2 rounded-full flex items-center gap-2 shadow-lg">
+                <i class="fa-solid fa-timeline"></i>
+                   Experience
                </button>
            </div>
        
@@ -124,113 +125,278 @@
                <a href="#" class="hover:text-blue-300"><i class="fab text-shadow fa-instagram"></i></a>
              </div>
            <!-- Footer -->
-           <p class="text-white mt-8 text-center text-sm opacity-70">Yuichiro || 2024 Vcard</p>
+           <p class="text-white mt-8 text-center text-sm opacity-70">Hera || 2024 Vcard</p>
          </div>
      </div>
-    <!-- music -->
-    <div id="music-element" class="hidden container mx-auto px-4 sm:px-6 lg:px-8 py-5">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Tuki  -->
-        <div class="text-center">
-            <div class="shadow-card bg-blue-500 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-10 backdrop-saturate-150 backdrop-contrast-100  rounded-2xl p-6 max-w-xl w-full">
-                <!-- Kotak Gambar -->
-                <div class="rounded-lg shadow-md overflow-hidden min-w-[300px] min-h-[200px]">
-                <img src="https://i.scdn.co/image/ab67616d00001e0255e029fef14405c5d536453b" alt="Grid Image 1" class="w-full h-[250px] object-cover">
+    <!-- EXPERIENCE -->
+    <div id="experience-element" class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="relative">
+          <!-- Timeline line -->
+          <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gray-300"></div>
+          
+          <!-- Timeline items -->
+          <div class="space-y-12">
+            <!-- Experience Item 1 -->
+            <div class="flex flex-col md:flex-row items-center">
+              <!-- Left side (for desktop) or top (for mobile) -->
+              <div class="w-full md:w-1/2 mb-6 md:mb-0 md:pr-12 md:text-right">
+                <div class="bg-white rounded-lg shadow-lg p-6 md:ml-auto md:mr-0 max-w-md">
+                  <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center mr-4">
+                      <img src="https://ucarecdn.com/8a092b4b-9d3a-4a25-b305-13077aacb4c4/cdn_jacoba.png" alt="Company Logo" class="w-8 h-8 object-contain rounded-full">
+                    </div>
+                    <div>
+                      <h3 class="text-xl font-bold text-black montserrat">Web Developer</h3>
+                      <p class="text-blue-600 font-medium montserrat">Jacoba Coffee</p>
+                    </div>
+                  </div>
+                  <p class="text-gray-600 mb-3">Jan 2024 - Present</p>
+                  <p class="text-gray-700">Simple websites Cafe with dynamic CRUD system integrate by firebase database, simple statistic and simple admin panel management</p>
                 </div>
-                <!-- Teks di Luar Gambar -->
-                <div class="mt-4 text-white text-shadow">
-                <h3 class="text-xl font-normal mb-2">晩餐化歌</h3>
-                <p class="text-lg font-custom font-normal">Tuki</p>
+              </div>
+              
+              <!-- Timeline dot (visible only on desktop) -->
+              <div class="hidden md:flex items-center justify-center z-10 bg-blue-500 rounded-full w-8 h-8 border-4 border-white shadow-md"></div>
+              
+              <!-- Right side empty for desktop -->
+              <div class="w-full md:w-1/2 md:pl-12"></div>
+            </div>
+             <!-- Experience Item 2 -->
+            <div class="flex flex-col md:flex-row items-center">
+                <!-- Left side empty for desktop -->
+                <div class="w-full md:w-1/2 md:pr-12"></div>
+                
+                <!-- Timeline dot (visible only on desktop) -->
+                <div class="hidden md:flex items-center justify-center z-10 bg-blue-500 rounded-full w-8 h-8 border-4 border-white shadow-md"></div>
+                
+                <!-- Right side (for desktop) or bottom (for mobile) -->
+                <div class="w-full md:w-1/2 md:pl-12">
+                <div class="bg-white rounded-lg shadow-lg p-6 max-w-md">
+                    <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center mr-4">
+                        <img src="https://ucarecdn.com/d6df7cb5-ed53-4038-bf5b-e5c0e2bb3242/favicon.png" alt="Company Logo" class="w-8 h-8 object-contain rounded-full">
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-800 montserrat">Japanese Private Tutor</h3>
+                        <p class="text-blue-600 font-medium montserrat">Lively Course</p>
+                    </div>
+                    </div>
+                    <p class="text-gray-600 mb-3">November 2024 - Present</p>
+                    <p class="text-gray-700">Japanese private tutor for high school beginners, providing personalized lessons to help students build a strong foundation in the japanese language.</p>
+                </div>
                 </div>
             </div>
-        </div>
-        <!-- Tuki  -->
-        <div class="text-center">
-            <div class="shadow-card bg-blue-500 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-10 backdrop-saturate-150 backdrop-contrast-100  rounded-2xl p-6 max-w-xl w-full">
-                <!-- Kotak Gambar -->
-                <div class="rounded-lg shadow-md overflow-hidden min-w-[300px] min-h-[200px]">
-                <img src="https://i.scdn.co/image/ab67616d0000b273bdf29b56466861a4ede96a58" alt="Grid Image 1" class="w-full h-[250px] object-cover">
+            <!-- Experience Item 3 -->
+            <div class="flex flex-col md:flex-row items-center">
+              <!-- Left side (for desktop) or top (for mobile) -->
+              <div class="w-full md:w-1/2 mb-6 md:mb-0 md:pr-12 md:text-right">
+                <div class="bg-white rounded-lg shadow-lg p-6 md:ml-auto md:mr-0 max-w-md">
+                  <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center mr-4">
+                      <img src="https://ucarecdn.com/7bd679fe-5a44-40e7-ab2e-13cc09fdd2b4/Screenshot20250228142749.png" alt="Company Logo" class="w-8 h-8 object-contain rounded-full">
+                    </div>
+                    <div>
+                      <h3 class="text-xl font-bold text-black montserrat">Japanese Private Tutor</h3>
+                      <p class="text-blue-600 font-medium montserrat">Widia Rumbel</p>
+                    </div>
+                  </div>
+                  <p class="text-gray-600 mb-3">February 2025 - Present</p>
+                  <p class="text-gray-700">Japanese private tutor for high school beginners, providing personalized lessons to help students build a strong foundation in the japanese language.</p>
                 </div>
-                <!-- Teks di Luar Gambar -->
-                <div class="mt-4 text-white text-shadow">
-                <h3 class="text-xl font-normal mb-2">純恋愛のインゴット</h3>
-                <p class="text-lg font-custom font-normal">Tuki</p>
+              </div>
+              
+              <!-- Timeline dot (visible only on desktop) -->
+              <div class="hidden md:flex items-center justify-center z-10 bg-blue-500 rounded-full w-8 h-8 border-4 border-white shadow-md"></div>
+              
+              <!-- Right side empty for desktop -->
+              <div class="w-full md:w-1/2 md:pl-12"></div>
+            </div>
+              <!-- Experience Item 4 -->
+              <div class="flex flex-col md:flex-row items-center">
+                <!-- Left side empty for desktop -->
+                <div class="w-full md:w-1/2 md:pr-12"></div>
+                
+                <!-- Timeline dot (visible only on desktop) -->
+                <div class="hidden md:flex items-center justify-center z-10 bg-blue-500 rounded-full w-8 h-8 border-4 border-white shadow-md"></div>
+                
+                <!-- Right side (for desktop) or bottom (for mobile) -->
+                <div class="w-full md:w-1/2 md:pl-12">
+                <div class="bg-white rounded-lg shadow-lg p-6 max-w-md">
+                    <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center mr-4">
+                        <img src="https://ucarecdn.com/61b8e223-d2bd-4b49-b5ca-702959bffc7a/Screenshot20250311023342.png" alt="Company Logo" class="w-8 h-8 object-contain rounded-full">
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-800 montserrat">Japanese Tutor & Lecturer Assistant</h3>
+                        <p class="text-blue-600 font-medium montserrat">LPK Mirai Mandiri</p>
+                    </div>
+                    </div>
+                    <p class="text-gray-600 mb-3">Maret 2025 - Present</p>
+                    <p class="text-gray-700">Japanese language tutor and assistant lecturer at LPK Mirai Mandiri, guiding students who are specifically preparing to participate in work programs in Japan.</p>
+                </div>
                 </div>
             </div>
-        </div>
-        <!-- ##Yorushika Section -->
-        <!-- Yorushika hebi -->
-        <div class="text-center">
-            <div class="shadow-card bg-blue-500 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-10 backdrop-saturate-150 backdrop-contrast-100  rounded-2xl p-6 max-w-xl w-full">
-                <!-- Kotak Gambar -->
-                <div class="rounded-lg shadow-md overflow-hidden min-w-[300px] min-h-[200px]">
-                <img src="https://i.scdn.co/image/ab67616d00001e0234821822f4ed93a97e460fd0" alt="Grid Image 1" class="w-full h-[250px] object-cover">
+            <!-- Experience Item 5 -->
+            <div class="flex flex-col md:flex-row items-center">
+              <!-- Left side (for desktop) or top (for mobile) -->
+              <div class="w-full md:w-1/2 mb-6 md:mb-0 md:pr-12 md:text-right">
+                <div class="bg-white rounded-lg shadow-lg p-6 md:ml-auto md:mr-0 max-w-md">
+                  <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center mr-4">
+                      <img src="https://ucarecdn.com/b997805d-a199-4c9c-b168-3cf5d2c5d9d1/Logo_undiksha1.png" alt="Company Logo" class="w-8 h-8 object-contain rounded-full">
+                    </div>
+                    <div>
+                      <h3 class="text-xl font-bold text-black montserrat">Ruang Belajar Inklusi</h3>
+                      <p class="text-blue-600 font-medium montserrat">SDN 2 Bengkala</p>
+                    </div>
+                  </div>
+                  <p class="text-gray-600 mb-3">December 2024</p>
+                  <p class="text-gray-700">Opportunity to develop the prototype for Ruang Belajar Inklusi, a learning application specifically designed to support the education of deaf and speech-impaired students at SDN 2 Bengkala.</p>
                 </div>
-                <!-- Teks di Luar Gambar -->
-                <div class="mt-4 text-white text-shadow">
-                <h3 class="text-xl font-normal mb-2">へび</h3>
-                <p class="text-lg font-custom font-normal">Yorushika</p>
+              </div>
+              
+              <!-- Timeline dot (visible only on desktop) -->
+              <div class="hidden md:flex items-center justify-center z-10 bg-blue-500 rounded-full w-8 h-8 border-4 border-white shadow-md"></div>
+              
+              <!-- Right side empty for desktop -->
+              <div class="w-full md:w-1/2 md:pl-12"></div>
+            </div>
+              <!-- Experience Item 6 -->
+              <div class="flex flex-col md:flex-row items-center">
+                <!-- Left side empty for desktop -->
+                <div class="w-full md:w-1/2 md:pr-12"></div>
+                
+                <!-- Timeline dot (visible only on desktop) -->
+                <div class="hidden md:flex items-center justify-center z-10 bg-blue-500 rounded-full w-8 h-8 border-4 border-white shadow-md"></div>
+                
+                <!-- Right side (for desktop) or bottom (for mobile) -->
+                <div class="w-full md:w-1/2 md:pl-12">
+                <div class="bg-white rounded-lg shadow-lg p-6 max-w-md">
+                    <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center mr-4">
+                        <img src="https://ucarecdn.com/ab28b285-582f-4fba-80d8-9271e4f22072/logo.webp" alt="Company Logo" class="w-8 h-8 object-contain rounded-full">
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-800 montserrat">Web Developer</h3>
+                        <p class="text-blue-600 font-medium montserrat">HMJ Bahasa Asing</p>
+                    </div>
+                    </div>
+                    <p class="text-gray-600 mb-3">December 2024 - January 2025</p>
+                    <p class="text-gray-700">As a Web Developer HMJ Bahasa Asing Department Head e-voting website, applied my interest in technology and background in Japanese language education to build a secure, user-friendly platform.</p>
+                </div>
                 </div>
             </div>
-        </div>
-        <!-- Yorushika elma -->
-        <div class="text-center">
-            <div class="shadow-card bg-blue-500 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-10 backdrop-saturate-150 backdrop-contrast-100  rounded-2xl p-6 max-w-xl w-full">
-                <!-- Kotak Gambar -->
-                <div class="rounded-lg shadow-md overflow-hidden min-w-[300px] min-h-[200px]">
-                <img src="https://i.scdn.co/image/ab67616d00001e020fc9f40ffa270f17b66bcdac" alt="Grid Image 1" class="w-full h-[250px] object-cover">
+            <!-- Experience Item 7 -->
+            <div class="flex flex-col md:flex-row items-center">
+              <!-- Left side (for desktop) or top (for mobile) -->
+              <div class="w-full md:w-1/2 mb-6 md:mb-0 md:pr-12 md:text-right">
+                <div class="bg-white rounded-lg shadow-lg p-6 md:ml-auto md:mr-0 max-w-md">
+                  <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center mr-4">
+                      <img src="https://ucarecdn.com/ab28b285-582f-4fba-80d8-9271e4f22072/logo.webp" alt="Company Logo" class="w-8 h-8 object-contain rounded-full">
+                    </div>
+                    <div>
+                      <h3 class="text-xl font-bold text-black montserrat">Web Developer</h3>
+                      <p class="text-blue-600 font-medium montserrat">HMJ Bahasa Asing</p>
+                    </div>
+                  </div>
+                  <p class="text-gray-600 mb-3">October 2024</p>
+                  <p class="text-gray-700">specializing in building full-stack attendance websites with real-time location tracking, featuring a dynamic and flexible CRUD system.</p>
                 </div>
-                <!-- Teks di Luar Gambar -->
-                <div class="mt-4 text-white text-shadow">
-                <h3 class="text-xl font-normal mb-2">エルマ</h3>
-                <p class="text-lg font-custom font-normal">Yorushika</p>
+              </div>
+              
+              <!-- Timeline dot (visible only on desktop) -->
+              <div class="hidden md:flex items-center justify-center z-10 bg-blue-500 rounded-full w-8 h-8 border-4 border-white shadow-md"></div>
+              
+              <!-- Right side empty for desktop -->
+              <div class="w-full md:w-1/2 md:pl-12"></div>
+            </div>
+              <!-- Experience Item 8 -->
+              <div class="flex flex-col md:flex-row items-center">
+                <!-- Left side empty for desktop -->
+                <div class="w-full md:w-1/2 md:pr-12"></div>
+                
+                <!-- Timeline dot (visible only on desktop) -->
+                <div class="hidden md:flex items-center justify-center z-10 bg-blue-500 rounded-full w-8 h-8 border-4 border-white shadow-md"></div>
+                
+                <!-- Right side (for desktop) or bottom (for mobile) -->
+                <div class="w-full md:w-1/2 md:pl-12">
+                <div class="bg-white rounded-lg shadow-lg p-6 max-w-md">
+                    <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center mr-4">
+                        <img src="https://ucarecdn.com/fc48d2e4-df40-49a9-847a-55cc36204760/iwate_cdn.png" alt="Company Logo" class="w-8 h-8 object-contain rounded-full">
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-800 montserrat">Tour Guides</h3>
+                        <p class="text-blue-600 font-medium montserrat">Iwate University & Universitas Pendidikan Ganesha</p>
+                    </div>
+                    </div>
+                    <p class="text-gray-600 mb-3">September 2023</p>
+                    <p class="text-gray-700">
+                        Cultural Immersion Program as Tour Guide for Collaborative Cultural Exchange: A Partnership between Iwate University and Universitas Pendidikan Ganesha.
+                    </p>
+                </div>
                 </div>
             </div>
-        </div>
-        <!-- Yorushika taiyou -->
-        <div class="text-center">
-            <div class="shadow-card bg-blue-500 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-10 backdrop-saturate-150 backdrop-contrast-100  rounded-2xl p-6 max-w-xl w-full">
-                <!-- Kotak Gambar -->
-                <div class="rounded-lg shadow-md overflow-hidden min-w-[300px] min-h-[200px]">
-                <img src="https://i.scdn.co/image/ab67616d0000b2739643c2293fb9ca58bc5cfe29" alt="Grid Image 1" class="w-full h-[250px] object-cover">
+            <!-- Experience Item 9 -->
+            <div class="flex flex-col md:flex-row items-center">
+              <!-- Left side (for desktop) or top (for mobile) -->
+              <div class="w-full md:w-1/2 mb-6 md:mb-0 md:pr-12 md:text-right">
+                <div class="bg-white rounded-lg shadow-lg p-6 md:ml-auto md:mr-0 max-w-md">
+                  <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center mr-4">
+                      <img src="https://ucarecdn.com/f4a3133c-8fdf-4693-9cff-177c4dec3d99/tohoku_cdn.jpg" alt="Company Logo" class="w-8 h-8 object-contain rounded-full">
+                    </div>
+                    <div>
+                      <h3 class="text-xl font-bold text-black montserrat">Presenter</h3>
+                      <p class="text-blue-600 font-medium montserrat">Tohoku Gakuin University & Universitas Pendidikan Ganesha</p>
+                    </div>
+                  </div>
+                  <p class="text-gray-600 mb-3">September 2023 </p>
+                  <p class="text-gray-700">Speaker at Workshop on Collaborative Cultural Exchange: A Partnership between Tohoku University and Ganesha University.</p>
                 </div>
-                <!-- Teks di Luar Gambar -->
-                <div class="mt-4 text-white text-shadow">
-                <h3 class="text-xl font-normal mb-2">太陽</h3>
-                <p class="text-lg font-custom font-normal">Yorushika</p>
+              </div>
+              
+              <!-- Timeline dot (visible only on desktop) -->
+              <div class="hidden md:flex items-center justify-center z-10 bg-blue-500 rounded-full w-8 h-8 border-4 border-white shadow-md"></div>
+              
+              <!-- Right side empty for desktop -->
+              <div class="w-full md:w-1/2 md:pl-12"></div>
+            </div>
+              <!-- Experience Item 10 -->
+              <div class="flex flex-col md:flex-row items-center">
+                <!-- Left side empty for desktop -->
+                <div class="w-full md:w-1/2 md:pr-12"></div>
+                
+                <!-- Timeline dot (visible only on desktop) -->
+                <div class="hidden md:flex items-center justify-center z-10 bg-blue-500 rounded-full w-8 h-8 border-4 border-white shadow-md"></div>
+                
+                <!-- Right side (for desktop) or bottom (for mobile) -->
+                <div class="w-full md:w-1/2 md:pl-12">
+                <div class="bg-white rounded-lg shadow-lg p-6 max-w-md">
+                    <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center mr-4">
+                        <img src="https://ucarecdn.com/fc48d2e4-df40-49a9-847a-55cc36204760/iwate_cdn.png" alt="Company Logo" class="w-8 h-8 object-contain rounded-full">
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-800 montserrat">Presenter</h3>
+                        <p class="text-blue-600 font-medium montserrat">Iwate University & Universitas Pendidikan Ganesha</p>
+                    </div>
+                    </div>
+                    <p class="text-gray-600 mb-3">September 2023</p>
+                    <p class="text-gray-700">
+                        Presenter at Workshop on Collaborative Cultural Exchange: A Partnership between Iwate University and Ganesha University.
+                    </p>
+                </div>
                 </div>
             </div>
+           <!-- more -->
+          </div>
+          <div class="flex justify-center mt-5">
+            <a href="https://www.linkedin.com/in/komang-agus-erawan-94a0ba265/details/experience/" class="bg-gradient-to-r text-white font-semibold montserrat from-blue-500 to-green-600 px-3 py-3 rounded-lg">See More</a>
         </div>
-        <!-- Yorushika telepath -->
-        <div class="text-center">
-            <div class="shadow-card bg-blue-500 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-10 backdrop-saturate-150 backdrop-contrast-100  rounded-2xl p-6 max-w-xl w-full">
-                <!-- Kotak Gambar -->
-                <div class="rounded-lg shadow-md overflow-hidden min-w-[300px] min-h-[200px]">
-                <img src="https://i.scdn.co/image/ab67616d0000b2734ac87535728a0b40073887cf" alt="Grid Image 1" class="w-full h-[250px] object-cover">
-                </div>
-                <!-- Teks di Luar Gambar -->
-                <div class="mt-4 text-white text-shadow">
-                <h3 class="text-xl font-normal mb-2">テレパス</h3>
-                <p class="text-lg font-custom font-normal">Yorushika</p>
-                </div>
-            </div>
         </div>
-    <!-- ### Z Section  -->
-    <div class="text-center">
-        <div class="shadow-card bg-blue-500 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-10 backdrop-saturate-150 backdrop-contrast-100  rounded-2xl p-6 max-w-xl w-full">
-            <!-- Kotak Gambar -->
-            <div class="rounded-lg shadow-md overflow-hidden min-w-[300px] min-h-[200px]">
-            <img src="https://i.scdn.co/image/ab67616d0000b273b326f7420dfdac114f0b5123" alt="Grid Image 1" class="w-full h-[250px] object-cover">
-            </div>
-            <!-- Teks di Luar Gambar -->
-            <div class="mt-4 text-white text-shadow">
-            <h3 class="text-xl font-normal font-custom mb-2">Ifu</h3>
-            <p class="text-lg font-custom font-normal">Z²</p>
-            </div>
-        </div>
-    </div>
-        </div>
-    </div>
+      </div>
     <!-- Portfolio -->
     <div id="portfolio-element" class="hidden container mx-auto px-4 sm:px-6 lg:px-8 py-5">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

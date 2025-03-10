@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     const portfolioButton = document.getElementById('portfolio');
-    const musicButton = document.getElementById('music');
+    const experienceButton = document.getElementById('experience');
     const blogsitesButton = document.getElementById('blogsites');
     const portfolioElement = document.getElementById('portfolio-element');
-    const musicElement = document.getElementById('music-element');
+    const experienceElement = document.getElementById('experience-element');
     const blogsitesElement = document.getElementById('blogsites-element');
 
     function showElement(element) {
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Event listener untuk tombol portfolio
     portfolioButton.addEventListener('click', () => {
         // Sembunyikan elemen musik
-        hideElement(musicElement);
+        hideElement(experienceElement);
         hideElement(blogsitesElement);
         
         // Tampilkan elemen portfolio
@@ -47,13 +47,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Event listener untuk tombol musik
-    musicButton.addEventListener('click', () => {
+    experienceButton.addEventListener('click', () => {
         // Sembunyikan elemen portfolio
         hideElement(portfolioElement);
         hideElement(blogsitesElement);
         
         // Tampilkan elemen musik
-        showElement(musicElement);
+        showElement(experienceElement);
     });
 
     // Event listener untuk tombol blogsites
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Sembunyikan elemen portfolio
         hideElement(portfolioElement);
         // Sembunyikan elemen musik
-        hideElement(musicElement);
+        hideElement(experienceElement);
         
         // Tampilkan elemen blogsites
         showElement(blogsitesElement);
@@ -209,7 +209,7 @@ async function fetchMediumFeed(isInitialLoad = false) {
                 if (!isInitialLoad && statusElement) {
                     setTimeout(() => {
                         statusElement.textContent = `Last updated: ${new Date().toLocaleTimeString()}`;
-                        statusElement.style.color = '#ffff';
+                        statusElement.style.color = 'white';
                     }, 2000);
                 }
             }
