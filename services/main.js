@@ -2,70 +2,105 @@ document.addEventListener('DOMContentLoaded', () => {
     const portfolioButton = document.getElementById('portfolio');
     const experienceButton = document.getElementById('experience');
     const blogsitesButton = document.getElementById('blogsites');
+    
     const portfolioElement = document.getElementById('portfolio-element');
     const experienceElement = document.getElementById('experience-element');
     const blogsitesElement = document.getElementById('blogsites-element');
-
+    
+    // Menyembunyikan semua elemen saat halaman dimuat
+    if (portfolioElement) portfolioElement.classList.add('hidden');
+    if (experienceElement) experienceElement.classList.add('hidden');
+    if (blogsitesElement) blogsitesElement.classList.add('hidden');
+    
+    // Memastikan semua elemen memiliki kelas transisi yang diperlukan
+    const allElements = [portfolioElement, experienceElement, blogsitesElement];
+    allElements.forEach(element => {
+        if (element) {
+            element.classList.add('transition', 'duration-500', 'ease-in-out');
+        }
+    });
+    
     function showElement(element) {
-        element.classList.remove('hidden');
-        element.classList.add('transition', 'duration-500', 'ease-in-out', 'opacity-0', 'translate-y-10');
+        if (!element) return;
         
+        // Pastikan elemen tersembunyi sebelum menampilkan
+        element.classList.remove('hidden');
+        element.classList.add('opacity-0', 'translate-y-10');
+        
+        // Tunggu sedikit waktu untuk DOM update
         setTimeout(() => {
             element.classList.remove('opacity-0', 'translate-y-10');
             element.classList.add('opacity-100', 'translate-y-0');
             
-            // Cek lebar layar sebelum melakukan scroll
-            if (window.matchMedia('(max-width: 768px)').matches) {
-                // Opsi scroll yang sangat halus
-                element.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start',
-                    inline: 'nearest'
+            // Perbaikan scroll agar proporsional dan presisi
+            setTimeout(() => {
+                // Hitung posisi elemen relatif terhadap halaman
+                const rect = element.getBoundingClientRect();
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                
+                // Tentukan offset untuk membuat scroll lebih proporsional
+                const offset = 80; // Sesuaikan nilai ini berdasarkan header atau elemen lain yang mungkin menutupi konten
+                
+                // Posisi yang dituju dengan memperhitungkan offset
+                const targetPosition = rect.top + scrollTop - offset;
+                
+                // Gunakan animasi scroll yang halus
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
                 });
-            }
+            }, 100); // Sedikit delay untuk memastikan transisi sudah dimulai
         }, 10);
     }
-
+    
     // Fungsi untuk menyembunyikan elemen dengan animasi halus
     function hideElement(element) {
+        if (!element) return;
+        if (element.classList.contains('hidden')) return;
+        
         element.classList.add('opacity-0', 'translate-y-10');
+        element.classList.remove('opacity-100', 'translate-y-0');
         
         setTimeout(() => {
             element.classList.add('hidden');
-            element.classList.remove('opacity-100', 'translate-y-0');
-        }, 500);
+        }, 500); // Sesuaikan dengan durasi transisi
     }
-
+    
+    // Fungsi untuk menyembunyikan semua elemen kecuali yang ditentukan
+    function hideAllExcept(exceptElement) {
+        allElements.forEach(element => {
+            if (element && element !== exceptElement) {
+                hideElement(element);
+            }
+        });
+    }
+    
     // Event listener untuk tombol portfolio
-    portfolioButton.addEventListener('click', () => {
-        // Sembunyikan elemen musik
-        hideElement(experienceElement);
-        hideElement(blogsitesElement);
-        
-        // Tampilkan elemen portfolio
-        showElement(portfolioElement);
-    });
-
-    // Event listener untuk tombol musik
-    experienceButton.addEventListener('click', () => {
-        // Sembunyikan elemen portfolio
-        hideElement(portfolioElement);
-        hideElement(blogsitesElement);
-        
-        // Tampilkan elemen musik
-        showElement(experienceElement);
-    });
-
+    if (portfolioButton) {
+        portfolioButton.addEventListener('click', (e) => {
+            e.preventDefault(); // Mencegah perilaku default tautan
+            hideAllExcept(portfolioElement);
+            showElement(portfolioElement);
+        });
+    }
+    
+    // Event listener untuk tombol experience
+    if (experienceButton) {
+        experienceButton.addEventListener('click', (e) => {
+            e.preventDefault(); // Mencegah perilaku default tautan
+            hideAllExcept(experienceElement);
+            showElement(experienceElement);
+        });
+    }
+    
     // Event listener untuk tombol blogsites
-    blogsitesButton.addEventListener('click', () => {
-        // Sembunyikan elemen portfolio
-        hideElement(portfolioElement);
-        // Sembunyikan elemen musik
-        hideElement(experienceElement);
-        
-        // Tampilkan elemen blogsites
-        showElement(blogsitesElement);
-    });
+    if (blogsitesButton) {
+        blogsitesButton.addEventListener('click', (e) => {
+            e.preventDefault(); // Mencegah perilaku default tautan
+            hideAllExcept(blogsitesElement);
+            showElement(blogsitesElement);
+        });
+    }
 });
 // Fetching blog
 let lastPostDate = null;
