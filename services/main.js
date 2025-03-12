@@ -1,7 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
     const portfolioButton = document.getElementById('portfolio');
+    const portfolioDekstop = document.getElementById('portfolio-desktop');
     const experienceButton = document.getElementById('experience');
+    const experienceDekstop = document.getElementById('experience-desktop');
     const blogsitesButton = document.getElementById('blogsites');
+    const blogsitesDekstop = document.getElementById('blogsites-desktop');
     
     const portfolioElement = document.getElementById('portfolio-element');
     const experienceElement = document.getElementById('experience-element');
@@ -20,6 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
     
+    const scrollIndicator = document.getElementById('scrollIndicator');
+    
     function showElement(element) {
         if (!element) return;
         
@@ -32,25 +37,60 @@ document.addEventListener('DOMContentLoaded', () => {
             element.classList.remove('opacity-0', 'translate-y-10');
             element.classList.add('opacity-100', 'translate-y-0');
             
-            // Perbaikan scroll agar proporsional dan presisi
-            setTimeout(() => {
-                // Hitung posisi elemen relatif terhadap halaman
-                const rect = element.getBoundingClientRect();
-                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            // Tampilkan indikator scroll jika konten berada di luar viewport
+            if (scrollIndicator) {
+                const elementBottom = element.getBoundingClientRect().bottom;
+                const viewportHeight = window.innerHeight;
                 
-                // Tentukan offset untuk membuat scroll lebih proporsional
-                const offset = 80; // Sesuaikan nilai ini berdasarkan header atau elemen lain yang mungkin menutupi konten
-                
-                // Posisi yang dituju dengan memperhitungkan offset
-                const targetPosition = rect.top + scrollTop - offset;
-                
-                // Gunakan animasi scroll yang halus
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
-            }, 100); // Sedikit delay untuk memastikan transisi sudah dimulai
+                if (elementBottom > viewportHeight) {
+                    scrollIndicator.classList.remove('hidden');
+                    setTimeout(() => {
+                        scrollIndicator.classList.remove('opacity-0');
+                        scrollIndicator.classList.add('opacity-100');
+                    }, 300);
+                }
+            }
         }, 10);
+    }
+    
+    // Tambahkan event listener untuk scrollIndicator
+    if (scrollIndicator) {
+        scrollIndicator.addEventListener('click', () => {
+            window.scrollBy({
+                top: window.innerHeight / 2,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Sembunyikan indikator scroll saat pengguna mulai scroll
+        window.addEventListener('scroll', () => {
+            if (scrollIndicator && !scrollIndicator.classList.contains('hidden')) {
+                scrollIndicator.classList.add('opacity-0');
+                setTimeout(() => {
+                    scrollIndicator.classList.add('hidden');
+                }, 500);
+            }
+        }, { passive: true });
+    }
+    
+    // Fungsi untuk menyembunyikan indikator scroll
+    function hideScrollIndicator() {
+        if (scrollIndicator) {
+            scrollIndicator.classList.add('opacity-0');
+            setTimeout(() => {
+                scrollIndicator.classList.add('hidden');
+            }, 500);
+        }
+    }
+    
+    // Tambahkan hideScrollIndicator ke fungsi hideAllExcept
+    function hideAllExcept(exceptElement) {
+        allElements.forEach(element => {
+            if (element && element !== exceptElement) {
+                hideElement(element);
+            }
+        });
+        hideScrollIndicator();
     }
     
     // Fungsi untuk menyembunyikan elemen dengan animasi halus
@@ -83,6 +123,13 @@ document.addEventListener('DOMContentLoaded', () => {
             showElement(portfolioElement);
         });
     }
+    if (portfolioDekstop) {
+        portfolioDekstop.addEventListener('click', (e) => {
+            e.preventDefault(); // Mencegah perilaku default tautan
+            hideAllExcept(portfolioElement);
+            showElement(portfolioElement);
+        });
+    }
     
     // Event listener untuk tombol experience
     if (experienceButton) {
@@ -92,10 +139,25 @@ document.addEventListener('DOMContentLoaded', () => {
             showElement(experienceElement);
         });
     }
+    if (experienceDekstop) {
+        experienceDekstop.addEventListener('click', (e) => {
+            e.preventDefault(); // Mencegah perilaku default tautan
+            hideAllExcept(experienceElement);
+            showElement(experienceElement);
+        });
+    }
     
     // Event listener untuk tombol blogsites
     if (blogsitesButton) {
         blogsitesButton.addEventListener('click', (e) => {
+            e.preventDefault(); // Mencegah perilaku default tautan
+            hideAllExcept(blogsitesElement);
+            showElement(blogsitesElement);
+        });
+    }
+    // Event listener untuk tombol blogsites
+    if (blogsitesDekstop) {
+        blogsitesDekstop.addEventListener('click', (e) => {
             e.preventDefault(); // Mencegah perilaku default tautan
             hideAllExcept(blogsitesElement);
             showElement(blogsitesElement);

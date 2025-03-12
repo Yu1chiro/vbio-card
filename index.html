@@ -742,7 +742,34 @@
         </div>
     </div>
     <!-- Bottom Navbar khusus Mobile dengan Efek Blend -->
-<div class="fixed bottom-0 left-0 right-0 z-50">
+<!-- Navbar untuk tampilan Desktop (ditampilkan hanya pada layar medium atau lebih besar) -->
+<nav class="hidden md:block fixed top-0 left-0 right-0 z-50 bg-transparent">
+  <div class="container mx-auto px-2 py-3">
+    <div class="flex items-center justify-between">
+      <!-- Logo atau nama brand bisa ditambahkan di sini -->
+      <div class="text-white font-bold text-xl">Vcard Profile</div>
+      
+      <!-- Menu navigasi desktop -->
+      <div class="flex items-center space-x-8">
+        <button type="button" id="portfolio-desktop" class="text-white hover:text-yellow-300 transition-colors duration-300 font-medium">
+          <span class="flex items-center"><i class="fas fa-folder-open mr-2"></i> Portofolio</span>
+        </button>
+        <button type="button" id="blogsites-desktop" class="text-white hover:text-yellow-300 transition-colors duration-300 font-medium">
+          <span class="flex items-center"><i class="fas fa-blog mr-2"></i> Blog</span>
+        </button>
+        <button type="button" id="experience-desktop" class="text-white hover:text-yellow-300 transition-colors duration-300 font-medium">
+          <span class="flex items-center"><i class="fa-solid fa-timeline mr-2"></i> Experience</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Spacer untuk mencegah konten terhalang navbar pada desktop -->
+<div class="hidden md:block h-16"></div>
+
+<!-- Bottom Navbar untuk tampilan Mobile (kode yang sudah ada, tetapi hanya ditampilkan pada layar kecil) -->
+<div class="fixed bottom-0 left-0 right-0 z-50 md:hidden">
   <!-- Lapisan backdrop gelap untuk memastikan kontras -->
   <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-40"></div>
   
@@ -761,10 +788,46 @@
       <span class="text-xs mt-1 whitespace-nowrap font-medium drop-shadow-md">Experience</span>
     </button>
   </div>
-  
 </div>
 
-<!-- Spacer untuk mencegah konten terhalang navbar -->
+<!-- Spacer untuk mencegah konten terhalang navbar pada mobile -->
 <div class="h-20 md:h-0"></div>
+<!-- Scroll Indicator Component with Enhanced Bounce Animation -->
+<div id="scrollIndicator" class="hidden fixed left-1/2 transform -translate-x-1/2 bottom-24 md:bottom-12 z-50 w-20 h-24 cursor-pointer transition-all duration-700 ease-in-out scale-100 hover:scale-110">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 120" class="drop-shadow-xl filter">
+    <!-- Outer glowing circle -->
+    <circle cx="50" cy="50" r="40" fill="white" stroke="white" stroke-width="3" class="animate-pulse" />
+
+    <!-- Inner circle with gradient -->
+    <circle cx="50" cy="50" r="36" fill="url(#grad1)" />
+
+    <!-- Text inside the circle -->
+    <text x="50" y="50" font-family="Arial, sans-serif"  font-size="8" fill="#ffffff" text-anchor="middle" font-weight="bold">SCROLL DOWN</text>
+
+    <!-- Define gradient -->
+    <defs>
+      <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:rgba(0, 140, 255, 0.9);stop-opacity:1" />
+        <stop offset="100%" style="stop-color:rgba(106, 0, 255, 0.9);stop-opacity:1" />
+      </linearGradient>
+    </defs>
+  </svg>
+</div>
+
+<style>
+/* Animations for the arrows */
+/* Hover effects for the entire component */
+#scrollIndicator:hover .arrow-group {
+  animation-duration: 0.8s;
+}
+
+#scrollIndicator:hover circle[r="40"] {
+  stroke: rgb(0, 200, 255);
+  stroke-width: 4;
+}
+</style>
+
+
+<!-- Tailwind utility classes adjusted for a more elegant look -->
 </body>
 </html>
